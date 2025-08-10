@@ -7,8 +7,10 @@ import Navbar from "../components/Navbar.jsx"
 import OverviewCards from "../components/OverviewCards.jsx"
 import AllocationCharts from "../components/AllocationCharts.jsx"
 import PerformanceChart from "../components/PerformanceChart.jsx"
+import PerformanceStats from "../components/PerformanceStats.jsx"
 import HoldingsTable from "../components/HoldingsTable.jsx"
 import TopMetrics from "../components/TopMetrics.jsx"
+import UploadCSV from "../components/UploadCSV.jsx"
 import { clearToken } from "../utils/auth.js"
 
 export default function Dashboard() {
@@ -65,10 +67,12 @@ export default function Dashboard() {
         {!loading && summary && (
           <>
             <OverviewCards summary={summary} returns={perf.returns} />
+            <UploadCSV onUploaded={loadAll} />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <AllocationCharts allocation={allocation} />
               <PerformanceChart data={perf.timeline} />
             </div>
+            <PerformanceStats returns={perf.returns} />
             <TopMetrics summary={summary} />
             <div className="card space-y-4">
               <input

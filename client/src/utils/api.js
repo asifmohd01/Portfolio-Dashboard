@@ -1,26 +1,27 @@
 import { getToken } from './auth.js'
 
-const ENV_BASE = (import.meta.env.VITE_API_URL || '').trim()
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000'
 
-function joinUrl(base, path) {
-  const a = base.endsWith('/') ? base.slice(0, -1) : base
-  const b = path.startsWith('/') ? path : `/${path}`
-  return `${a}${b}`
+function isFormData(value) {
+  return typeof FormData !== 'undefined' && value instanceof FormData
 }
 
 async function request(path, { method = 'GET', body, headers = {} } = {}) {
-  // If ENV_BASE is set (e.g., in production), use it; otherwise use relative /api for Vite proxy in dev.
-  const url = ENV_BASE ? joinUrl(ENV_BASE, path) : path
-
   const token = getToken()
-  const res = await fetch(url, {
+  const finalHeaders = {
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    ...headers,
+  }
+  // Only set JSON header when body is not FormData
+  const hasForm = isFormData(body)
+  if (!hasForm) {
+    finalHeaders['Content-Type'] = 'application/json'
+  }
+
+  const res = await fetch(`${BASE_URL}${path}`, {
     method,
-    headers: {
-      'Content-Type': 'application/json',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...headers,
-    },
-    body: body ? JSON.stringify(body) : undefined,
+    headers: finalHeaders,
+    body: body ? (hasForm ? body : JSON.stringify(body)) : undefined,
   })
 
   const text = await res.text()

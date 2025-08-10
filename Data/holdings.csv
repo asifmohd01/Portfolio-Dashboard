@@ -1,0 +1,16 @@
+symbol,name,quantity,avgPrice,currentPrice,sector,marketCap
+RELIANCE,Reliance Industries Ltd,50,2450.00,2680.50,Energy,Large
+INFY,Infosys Limited,100,1800.00,2010.75,Technology,Large
+TCS,Tata Consultancy Services,80,3200.00,3500.00,Technology,Large
+HDFC,HDFC Bank,60,1400.00,1370.00,Banking,Large
+ICICI,ICICI Bank,70,700.00,750.00,Banking,Large
+SUNPHARMA,Sun Pharmaceutical Industries,90,700.00,730.00,Healthcare,Mid
+DRREDDY,Dr. Reddy's Laboratories,40,4800.00,4900.00,Healthcare,Mid
+BAJAJ-AUTO,Bajaj Auto,30,3600.00,3700.00,Automobile,Mid
+MARUTI,Maruti Suzuki India Ltd,25,7000.00,7300.00,Automobile,Large
+ADANIGREEN,Adani Green Energy,45,1200.00,1250.00,Energy,Mid
+HCLTECH,HCL Technologies,85,1100.00,1150.00,Technology,Large
+LT,Larsen & Toubro,55,1500.00,1525.00,Infrastructure,Large
+AXISBANK,Axis Bank,65,600.00,620.00,Banking,Large
+TATASTEEL,Tata Steel,40,1100.00,1080.00,Metals,Mid
+EICHERMOT,Eicher Motors,20,2500.00,2600.00,Automobile,Mid
