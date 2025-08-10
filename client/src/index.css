@@ -1,0 +1,78 @@
+/* Tailwind via Vite plugin */
+@import "tailwindcss";
+
+/* Dark + gold design tokens */
+:root {
+  --bg: #0b0b0f;
+  --card: #121218;
+  --soft: #1a1a23;
+  --border: #2a2a33;
+  --gold: #d4af37;
+  --gold2: #b7932e;
+  --success: #22c55e;
+  --danger: #ef4444;
+}
+
+/* Helper classes */
+.bg-card {
+  background-color: var(--card);
+}
+.bg-soft {
+  background-color: var(--soft);
+}
+.border-border {
+  border-color: var(--border);
+}
+.text-gold {
+  color: var(--gold);
+}
+.bg-gold {
+  background-color: var(--gold);
+}
+.text-success {
+  color: var(--success);
+}
+.text-danger {
+  color: var(--danger);
+}
+.shadow-glow {
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2), 0 0 24px rgba(212, 175, 55, 0.08);
+}
+
+/* Components */
+.btn {
+  @apply inline-flex items-center gap-2 rounded-md px-4 py-2 font-semibold text-black transition-colors;
+  background-color: var(--gold);
+}
+.btn:hover {
+  background-color: var(--gold2);
+}
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-md border px-4 py-2 font-semibold text-gray-200 transition-colors;
+  border-color: var(--border);
+}
+.btn-ghost:hover {
+  background-color: var(--soft);
+}
+.card {
+  @apply rounded-xl border p-4 shadow;
+  border-color: var(--border);
+  background-color: var(--card);
+}
+.input {
+  @apply w-full rounded-md border px-3 py-2 text-gray-200 placeholder-gray-400 focus:outline-none;
+  border-color: var(--border);
+  background-color: var(--soft);
+  outline: 2px solid transparent;
+}
+.input:focus {
+  outline-color: var(--gold);
+}
+.table {
+  @apply w-full border-collapse;
+}
+.table th,
+.table td {
+  @apply border-b px-3 py-2;
+  border-color: var(--border);
+}
