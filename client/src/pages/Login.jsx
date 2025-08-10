@@ -41,7 +41,7 @@ export default function Login() {
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-gold" />
-              <h1 className="text-2xl font-semibold">Wealth Manager</h1>
+              <h1 className="text-2xl font-semibold">Portfolio Dashboard</h1>
             </div>
             <p className="text-gray-400">Sign in to access your portfolio analytics.</p>
           </div>
