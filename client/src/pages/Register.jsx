@@ -37,7 +37,7 @@ export default function Register() {
         </div>
         <form onSubmit={onSubmit} className="space-y-4 card">
           <div className="space-y-2">
-            <label className="text-sm">Email</label>
+            <label className="text-sm" required>Email</label>
             <input
               className="input"
               type="email"
@@ -48,7 +48,7 @@ export default function Register() {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-sm">Password</label>
+            <label className="text-sm" required>Password</label>
             <input
               className="input"
               type="password"
@@ -60,7 +60,7 @@ export default function Register() {
           </div>
           {error && <div className="text-danger text-sm">{error}</div>}
           {success && <div className="text-success text-sm">{success}</div>}
-          <button className="btn w-full disabled:opacity-60" disabled={loading}>
+          <button className="btn w-full disabled:opacity-60 " disabled={loading}>
             {loading ? "Creating..." : "Create account"}
           </button>
         </form>
